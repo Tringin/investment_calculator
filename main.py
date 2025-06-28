@@ -56,12 +56,18 @@ tk.Label(root, text="Return (p.a. in %)").grid(row=2, column=3)
 return_value = tk.Entry(root)
 return_value.grid(row=2, column=4)
 
+#PnL --> add here with config the pnl later
+tk.Label(root, text="PnL").grid(row=6, column=0)
+pnl_result = tk.Label(root, text="")
+pnl_result.grid(row=6, column=1)
+
+#Total fees --> add here with config the total fees later
+tk.Label(root, text="Total Fees").grid(row=7, column=0)
+total_fees = tk.Label(root, text="")
+total_fees.grid(row=7, column=1)
 
 
-
-
-
-def get_capital():
+def get_fees_total():
     amount = initial_capital.get()
     amount = Decimal(amount)
     value = get_transaction_fees(amount)
