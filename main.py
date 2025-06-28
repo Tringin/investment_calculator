@@ -55,6 +55,8 @@ tk.Label(root, text="Total Fees").grid(row=7, column=0)
 total_fees = tk.Label(root, text="")
 total_fees.grid(row=7, column=1)
 
+tk.Button(root, text="Calculate").grid(row=8, column=0)
+
 
 def get_fees_total():
     amount = initial_capital.get()
