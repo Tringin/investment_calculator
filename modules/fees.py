@@ -45,13 +45,14 @@ def get_depot_fees(portfolio_value):
             return value
 
 
-
 #stampfee 0.15%
 def get_stamp_fees(transaction_amount):
-    value = (transaction_amount / 100) * 0.15
+    transaction_amount = Decimal(str(transaction_fees))
+    value = (transaction_amount / 100) * Decimal(0.15)
     return value
 
 #exchange fee 0.075%
 def get_exchange_fees(transaction_amount):
-    value = (transaction_amount / 100) * 0.075
+    transaction_amount = Decimal(str(transaction_fees))
+    value = (transaction_amount / 100) * Decimal(0.075)
     return value
