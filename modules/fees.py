@@ -37,12 +37,21 @@ def get_leader_fees(amount):
         if amount >= key[0] and amount <= key[1]:
             return value
 
-def get_depot_fees(portfolio_value):
-    pass
 
+#custody fees
+def get_depot_fees(portfolio_value):
+    portfolio_value = Decimal(portfolio_value)
+    for key, value in depot_fees.items():
+        if portfolio_value >= key[0] and portfolio_value <= key[1]:
+            return value
+
+
+
+#stampfee 0.15%
 def get_stamp_fees(transaction_amount):
     pass
 
+#exchange fee 0.075%
 def get_exchange_fees(transaction_amount):
     pass
 
