@@ -24,7 +24,7 @@ tk.Label(root, text="Initial capital").grid(row=0, column=2)
 initial_capital = tk.Entry(root)
 initial_capital.grid(row=0, column=3)
 
-# Rhythm + ticking boxes
+# Rhythm + Dropdown-OptionMenu
 tk.Label(root, text="Rhythm").grid(row=1, column=0)
 
 rhythm_var = tk.StringVar()
