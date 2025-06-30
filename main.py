@@ -14,15 +14,15 @@ root.title("Investment calculator")
 tk.Label(root, text="Recurring capital").grid(row=0, column=0)
 
 # creating entry field and saving it in the variable. ofc also layout
-recurring_capital = tk.Entry(root)
-recurring_capital.grid(row=0, column=1)
+entry_recurring_capital = tk.Entry(root)
+entry_recurring_capital.grid(row=0, column=1)
 
 # text for starting capital
 tk.Label(root, text="Initial capital").grid(row=0, column=2)
 
 # creating entry field and saving it in the variable. ofc also layout
-initial_capital = tk.Entry(root)
-initial_capital.grid(row=0, column=3)
+entry_initial_capital = tk.Entry(root)
+entry_initial_capital.grid(row=0, column=3)
 
 # Rhythm + Dropdown-OptionMenu
 tk.Label(root, text="Rhythm").grid(row=1, column=0)
@@ -37,13 +37,13 @@ dropwdown.grid(row=1, column=1)
 
 # Timeframe
 tk.Label(root, text="Timeframe").grid(row=1, column=3)
-timeframe_value = tk.Entry(root)
-timeframe_value.grid(row=1, column=4)
+entry_timeframe_value = tk.Entry(root)
+entry_timeframe_value.grid(row=1, column=4)
 
 # Return
 tk.Label(root, text="Return (p.a. in %)").grid(row=2, column=3)
-return_value = tk.Entry(root)
-return_value.grid(row=2, column=4)
+entry_return_value = tk.Entry(root)
+entry_return_value.grid(row=2, column=4)
 
 # PnL --> add here with config the pnl later
 tk.Label(root, text="PnL").grid(row=6, column=0)
@@ -63,6 +63,7 @@ def get_fees_total():
     amount = Decimal(amount)
     value = get_transaction_fees(amount)
     return value
+
 
 
 # runs the main window loop
