@@ -1,6 +1,6 @@
 import tkinter as tk
 from .config import DEFAULT_WINDOW_SIZE
-from .simulation import calculate_callback
+from .simulation import *
 
 root = tk.Tk()
 root.geometry(DEFAULT_WINDOW_SIZE)
@@ -51,4 +51,16 @@ tk.Label(root, text="Total Fees").grid(row=7, column=0)
 total_fees = tk.Label(root, text="")
 total_fees.grid(row=7, column=1)
 
-tk.Button(root, text="Calculate", command=calculate_callback()).grid(row=8, column=0)
+def calculate_callback():
+    initial = entry_initial_capital.get()
+    recurring = entry_recurring_capital.get()
+    rhythm = rhythm_var.get()
+    timeframe = entry_timeframe.get()
+    return_rate = entry_return_value.get()
+
+    result = calculate_investments(initial, recurring, rhythm, timeframe, return_rate)
+
+    pnl_result.config(text=f"PnL: {result}")
+
+
+tk.Button(root, text="Calculate", command=calculate_callback).grid(row=8, column=0)
