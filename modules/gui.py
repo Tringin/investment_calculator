@@ -37,7 +37,7 @@ entry_timeframe = tk.Entry(root)
 entry_timeframe.grid(row=1, column=4)
 
 # Return
-tk.Label(root, text="Return (p.a. in %)").grid(row=2, column=3)
+tk.Label(root, text="Return (per month in %)").grid(row=2, column=3)
 entry_return_value = tk.Entry(root)
 entry_return_value.grid(row=2, column=4)
 
