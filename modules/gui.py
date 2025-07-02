@@ -31,8 +31,8 @@ dropwdown.grid(row=1, column=1)
 
 # Timeframe
 tk.Label(root, text="Timeframe").grid(row=1, column=3)
-entry_timeframe_value = tk.Entry(root)
-entry_timeframe_value.grid(row=1, column=4)
+entry_timeframe = tk.Entry(root)
+entry_timeframe.grid(row=1, column=4)
 
 # Return
 tk.Label(root, text="Return (p.a. in %)").grid(row=2, column=3)

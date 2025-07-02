@@ -3,13 +3,11 @@ from decimal import Decimal
 import matplotlib.pyplot as plt
 
 from modules.gui import *
-from modules.fees import get_transaction_fees
+from modules.simulation import calculate_investments
 
-def get_fees_total():
-    amount = initial_capital.get()
-    amount = Decimal(amount)
-    value = get_transaction_fees(amount)
-    return value
+calculate_investments(entry_initial_capital, entry_recurring_capital, rhythm_var, entry_timeframe, entry_return_value)
+
+
 
 # runs the main window loop
 root.mainloop()
