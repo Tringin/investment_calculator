@@ -1,5 +1,5 @@
 from decimal import Decimal
-from fees import get_transaction_fees
+from .fees import get_transaction_fees
 
 portfolio_values = 0
 
