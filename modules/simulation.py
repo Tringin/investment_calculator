@@ -16,6 +16,7 @@ def calculate_investments(initial_capital, recurring_capital, rhythm, timeframe,
             portfolio_values = portfolio_values + (portfolio_values / 100 * return_rate)
             if months % RHYTHM_MAPPING[rhythm] == 0:
                 portfolio_values += recurring_capital
+            all_returns.append(portfolio_values)
         return round(portfolio_values, 2)
     else:
         portfolio_values = recurring_capital
