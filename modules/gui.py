@@ -1,5 +1,6 @@
 import tkinter as tk
 from .config import DEFAULT_WINDOW_SIZE
+from .simulation import calculate_callback
 
 root = tk.Tk()
 root.geometry(DEFAULT_WINDOW_SIZE)
@@ -50,4 +51,4 @@ tk.Label(root, text="Total Fees").grid(row=7, column=0)
 total_fees = tk.Label(root, text="")
 total_fees.grid(row=7, column=1)
 
-tk.Button(root, text="Calculate").grid(row=8, column=0)
+tk.Button(root, text="Calculate", command=calculate_callback()).grid(row=8, column=0)
