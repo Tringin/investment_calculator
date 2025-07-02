@@ -60,7 +60,7 @@ def calculate_callback():
 
     result = calculate_investments(initial, recurring, rhythm, timeframe, return_rate)
 
-    pnl_result.config(text=f"PnL: {result}")
+    pnl_result.config(text=f"PnL: CHF {result}")
 
 
 tk.Button(root, text="Calculate", command=calculate_callback).grid(row=8, column=0)
