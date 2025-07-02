@@ -6,19 +6,19 @@ root = tk.Tk()
 root.geometry(DEFAULT_WINDOW_SIZE)
 root.title("Investment calculator")
 
-# text for recurring capital
-tk.Label(root, text="Recurring capital").grid(row=0, column=0)
-
-# creating entry field and saving it in the variable. ofc also layout
-entry_recurring_capital = tk.Entry(root)
-entry_recurring_capital.grid(row=0, column=1)
-
 # text for starting capital
-tk.Label(root, text="Initial capital").grid(row=0, column=2)
+tk.Label(root, text="Initial capital").grid(row=0, column=0)
 
 # creating entry field and saving it in the variable. ofc also layout
 entry_initial_capital = tk.Entry(root)
-entry_initial_capital.grid(row=0, column=3)
+entry_initial_capital.grid(row=0, column=1)
+
+# text for recurring capital
+tk.Label(root, text="Recurring capital").grid(row=0, column=2)
+
+# creating entry field and saving it in the variable. ofc also layout
+entry_recurring_capital = tk.Entry(root)
+entry_recurring_capital.grid(row=0, column=3)
 
 # Rhythm + Dropdown-OptionMenu
 tk.Label(root, text="Rhythm").grid(row=1, column=0)

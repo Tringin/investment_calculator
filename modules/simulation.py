@@ -14,9 +14,7 @@ def calculate_investments(initial_capital, recurring_capital, rhythm, timeframe,
         portfolio_values -= get_transaction_fees(portfolio_values)
         for months in range(1, timeframe + 1):
             portfolio_values = portfolio_values + (portfolio_values / 100 * return_rate)
-            print(portfolio_values)
             if months % RHYTHM_MAPPING[rhythm] == 0:
                 portfolio_values += recurring_capital
-        print(portfolio_values)
-        return portfolio_values
+        return round(portfolio_values, 2)
     return None
