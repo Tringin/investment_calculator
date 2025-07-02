@@ -62,5 +62,4 @@ def calculate_callback():
 
     pnl_result.config(text=f"PnL: CHF {result}")
 
-
 tk.Button(root, text="Calculate", command=calculate_callback).grid(row=8, column=0)
