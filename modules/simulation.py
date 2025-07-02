@@ -6,7 +6,7 @@ def calculate_investments(initial_capital, recurring_capital, rhythm, timeframe,
     initial_capital = Decimal(str(initial_capital))
     recurring_capital = Decimal(str(recurring_capital))
     recurring_capital -= get_transaction_fees(recurring_capital)
-    return_rate = int(str(return_rate))
+    return_rate = int(return_rate)
     timeframe = int(timeframe)
 
     if initial_capital != 0:
@@ -18,3 +18,5 @@ def calculate_investments(initial_capital, recurring_capital, rhythm, timeframe,
             if months % RHYTHM_MAPPING[rhythm] == 0:
                 portfolio_values += recurring_capital
         print(portfolio_values)
+        return portfolio_values
+    return None
