@@ -8,6 +8,7 @@ def calculate_investments(initial_capital, recurring_capital, rhythm, timeframe,
     recurring_capital -= get_transaction_fees(recurring_capital)
     return_rate = int(return_rate)
     timeframe = int(timeframe)
+    all_returns = []
 
     if initial_capital != 0:
         portfolio_values = initial_capital
