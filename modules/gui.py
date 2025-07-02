@@ -1,7 +1,8 @@
 import tkinter as tk
+from .config import DEFAULT_WINDOW_SIZE
 
 root = tk.Tk()
-root.geometry("800x600")
+root.geometry(DEFAULT_WINDOW_SIZE)
 root.title("Investment calculator")
 
 # text for recurring capital
@@ -22,12 +23,12 @@ entry_initial_capital.grid(row=0, column=3)
 tk.Label(root, text="Rhythm").grid(row=1, column=0)
 
 rhythm_var = tk.StringVar()
-rhythm_var.set("Monthly") # Default-Wert
+rhythm_var.set("Monthly") # Default Value
 
 options = ["Monthly", "Every 2 months", "Quarterly", "2x a year", "Yearly"]
 
-dropwdown = tk.OptionMenu(root, rhythm_var, *options)
-dropwdown.grid(row=1, column=1)
+dropdown = tk.OptionMenu(root, rhythm_var, *options)
+dropdown.grid(row=1, column=1)
 
 # Timeframe
 tk.Label(root, text="Timeframe").grid(row=1, column=3)

@@ -1,15 +1,8 @@
 from decimal import Decimal
 from .fees import get_transaction_fees
+from .config import RHYTHM_MAPPING
 
 portfolio_values = 0
-
-rhythm_in_months = {
-    "Monthly": 1,
-    "Every 2 months": 2,
-    "Quarterly": 3,
-    "2x a year": 6,
-    "Yearly": 12
-}
 
 def calculate_investments(initial_capital, recurring_capital, rhythm, timeframe, return_rate):
     initial_capital = Decimal(str(initial_capital))
@@ -19,7 +12,7 @@ def calculate_investments(initial_capital, recurring_capital, rhythm, timeframe,
     if initial_capital != 0:
         portfolio_values = initial_capital
         for months in range(1, timeframe + 1):
-            if months % rhythm_in_months[rhythm] == 0:
+            if months % RHYTHM_MAPPING[rhythm] == 0:
                 recurring_capital -= get_transaction_fees(recurring_capital)
                 portfolio_values += recurring_capital
                 if months != 1:
