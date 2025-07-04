@@ -1,6 +1,9 @@
 import tkinter as tk
+
+from .charts import create_investment_chart
 from .config import DEFAULT_WINDOW_SIZE
 from .simulation import *
+from .charts import *
 
 root = tk.Tk()
 root.geometry(DEFAULT_WINDOW_SIZE)
@@ -58,8 +61,23 @@ def calculate_callback():
     timeframe = entry_timeframe.get()
     return_rate = entry_return_value.get()
 
-    result = calculate_investments(initial, recurring, rhythm, timeframe, return_rate)
+    result = get_final_value(initial, recurring, rhythm, timeframe, return_rate)
 
     pnl_result.config(text=f"PnL: CHF {result}")
 
-tk.Button(root, text="Calculate", command=calculate_callback).grid(row=8, column=0)
+calculate_button = tk.Button(root, text="Calculate", command=calculate_callback)
+calculate_button.grid(row=8, column=0)
+
+def start_chart():
+    initial = entry_initial_capital.get()
+    recurring = entry_recurring_capital.get()
+    rhythm = rhythm_var.get()
+    timeframe = entry_timeframe.get()
+    return_rate = entry_return_value.get()
+
+    monthly_progress_data = get_monthly_progress(initial, recurring, rhythm, timeframe, return_rate)
+    timeframe_data = entry_timeframe.get()
+    create_investment_chart(monthly_progress_data, timeframe_data)
+
+chart_button = tk.Button(root, text="Chart", command=start_chart)
+chart_button.grid(row=8, column=1)
